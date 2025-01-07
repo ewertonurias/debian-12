@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 # Habilitando arquitetura 32 bits
 printf "Habilitando arquitetura i386...\n"
