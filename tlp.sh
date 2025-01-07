@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Verifica se o script está sendo executado como root
+if [ "$(id -u)" -ne 0 ]; then
+    printf "Este script precisa ser executado como root.\n"
+    exit 1
+fi
+
 # Instalando o TLP
 printf "Instalando o TLP...\n"
 sudo apt install -y tlp
