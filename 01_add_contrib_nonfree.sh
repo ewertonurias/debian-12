@@ -9,21 +9,20 @@ fi
 # Caminho do arquivo sources.list
 SOURCES_LIST="/etc/apt/sources.list"
 
-# Gerando backup do sources.list original
+# Faz um backup do /etc/apt/sources.list para a pasta pessoal do usuário
 BACKUP_FILE=~/sources.list.bak
 printf "Fazendo backup do arquivo %s para %s...\n" "$SOURCES_LIST" "$BACKUP_FILE"
 cp "$SOURCES_LIST" "$BACKUP_FILE"
 
-# Deletando o arquivo original
-printf "Deletando o arquivo original...\n"
+# Excluindo o arquivo original
+printf "Excluindo o arquivo original...\n"
 rm "$SOURCES_LIST"
 
 # Gerando novo sources.list
-printf "Gerando novo sources.list com 'contrib' e 'non-free' em %s...\n" "$SOURCES_LIST"
+printf "Gerando novo arquivo com 'contrib' e 'non-free' em %s...\n" "$SOURCES_LIST"
 
 # Para Debian 12 (bookworm), ajuste conforme sua versão
 cat <<EOL >> $SOURCES_LIST
-
 deb http://deb.debian.org/debian/ bookworm main non-free-firmware contrib non-free
 deb-src http://deb.debian.org/debian/ bookworm main non-free-firmware contrib non-free
 
