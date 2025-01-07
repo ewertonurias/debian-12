@@ -7,7 +7,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Criando diretório games em /mnt
-printf "Criando o diretório games em /mnt...\n"
+printf "Criando o caminho /mnt/games...\n"
 sudo mkdir /mnt/games
 
 # Caminho do arquivo /etc/fstab
@@ -29,5 +29,5 @@ else
     printf "Adicionando a nova entrada ao final do arquivo %s...\n" "$FSTAB_FILE"
     printf "%s\n" "$NEW_ENTRY" >> "$FSTAB_FILE"
     printf "Nova entrada adicionada com sucesso.\n"
-    printf "Reinicie o sistema para entrar em vigor.\n"
+    printf "Reinicie o sistema para que as alterações entrem em vigor.\n"
 fi
